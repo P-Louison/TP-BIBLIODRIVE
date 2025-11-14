@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="AjoutMembreBase.php" method="get">
+    <form action="AjoutMembreBase.php" method="post">
         
         Mail : <input type="text" name="mel">
         <br> 
@@ -20,7 +20,7 @@
         <br> 
         Ville : <input type="text" name="ville">
         <br>
-        Code Postal : <input type="integer" name="codepostal">
+        Code Postal : <input type="text" name="codepostal">
         <br> 
         Profil : <input type="text" name="profil">
         <br>
