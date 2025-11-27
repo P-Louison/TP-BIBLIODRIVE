@@ -44,20 +44,13 @@
         </div>
 
         <div class="col-md-2 container-fluid">
-            <img src="./image/chateauMoulinsart.jpg" class="float-end" width="80%">
+            <img src="./image/chateauMoulinsart.jpg" class="float-end" width="100%">
         </div>
     </div>
     
-    
-
-</div>
+<br>
+<br>
 
 <br>
 
-<?php
-    include 'carrousel.php';
-    
-
-    include 'blocIdentification.php';
-    ?>
 
