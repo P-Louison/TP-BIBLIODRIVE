@@ -17,8 +17,11 @@
         <p>
             La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
             Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
-            <br>
-            a faire, regler le probleme de include avec blocIdentification !!!
+            
+            test sur le boutton pour blocIdentification 8.18
+            si pas cliqué afficher a vide, sinon afficher le menu administrateur
+
+
         </p>
         <br>
 
@@ -30,9 +33,9 @@
                 </button>
                 
                 <div class="collapse navbar-collapse" id="mynavbar">
-                
-                <form class="d-flex container-fluid">
-                    <input class="form-control me-2" type="text" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)">
+
+                <form class="d-flex container-fluid" action="pageLivre.php" method="get">
+                    <input class="form-control me-2" type="text" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)" name="navBar" >
                     <button class="btn btn-primary" type="button">Panier</button>
                 </form>
                 
@@ -48,9 +51,6 @@
         </div>
     </div>
     
-<br>
-<br>
-
 <br>
 
 

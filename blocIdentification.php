@@ -1,14 +1,14 @@
 
     <div class="col-md-2 container-fluid">
-        <div class="row">
-            <h4> Se Connecter </h4>
+        
+            <h4> Se connecter </h4>
             <br>
-            identifiant : <input type="text" name="mel">
+            identifiant : <input type="text" name="identifiant">
             <br> 
-            <br>
             Mot de Passe : <input type="text" name="motdepasse">
             <br>
-        </div>
+            <input type="submit" value="Connexion">
+        
     </div>        
 </div>
 
