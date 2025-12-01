@@ -28,16 +28,20 @@
                         <h5>  '.$livre->titre.'</h5><br>
                         <img src="./image/'.$livre->photo.'" class="d-block mx-auto" style="width:80%">
                     </div>
-                    
-
-
                   </div>';
             
-        ?>
+            $stmt = $connexion->prepare("SELECT * FROM emprunter INNER JOIN livre ON emprunter.nolivre = livre.titre = :titre");
+            $stmt->bindValue(":titre", $_GET['titre']); 
+            $stmt->setFetchMode(PDO::FETCH_OBJ);
+            $stmt->execute();
+            $livre = $stmt->fetch();
 
+            si le livre est présent dans la réponse donner, alors afficher emprunter, sinon afficher disponible + le texte : pour pouvoir.....
+            
 
         
-
+        
+        ?>
 
 
     </div>
