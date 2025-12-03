@@ -1,36 +1,38 @@
 
     <div class="col-md-2 container-fluid">
-        
-        <h4> Se connecter </h4>
-        <br>
-        identifiant : <input type="text" name="identifiant">
-        <br> 
-        Mot de Passe : <input type="text" name="motdepasse">
-        <br>
-        <input type="submit" value="Connexion" name=btnEnvoyer>
-
-
-
-
-
 
         <?php
 
- 
-
         if(!isset($_POST['btnEnvoyer'])) 
-        {/* L'entrée btnEnvoyer est vide = le formulaire n'a pas été posté, on affiche le formulaire */
+        {
             echo '
+            <h4>Connexion </h4>
             <form action="" method="post">
-            Nom : <input type="text" name="txtNom"><br>
-            Mél : <input type="text" name="txtMel"><br>
-            <input type="submit" name="btnEnvoyer" value="Envoyer" >
+            Identifiant : <input type="text" name="txtNom"><br>
+            Mot de passe : <input type="password" name="txtMdp"><br>
+            <br>
+            <input type="submit" name="btnEnvoyer" value="Connexion" >
             </form>';
+
+            
         }
         else 
-        /* L'utilisateur a cliqué sur Envoyer, l'entrée btnEnvoyer <> vide, on traite le formulaire */
-        {    echo "Bonjour : ".$_POST["txtNom"]."<br>";
-            echo "Votre mél est : ".$_POST["txtMel"]; 
+        {    
+            require_once('connexionbase.php');
+            $stmt = $connexion->prepare("SELECT * FROM utilisateur WHERE nom = :txtNom AND motdepasse = :txtMdp");
+            $stmt->bindValue(":txtNom", $_POST['txtNom']); 
+            $stmt->bindValue(":txtMdp", $_POST['txtMdp']); 
+            $stmt->setFetchMode(PDO::FETCH_OBJ);
+            $stmt->execute();
+            $info = $stmt->fetch();
+            
+            echo '<p>'.$info->prenom.'  '.$info->nom.'</p>
+            <p>'.$info->mel.'</p>
+            <p>'.$info->adresse.'</p>
+            <p>'.$info->codepostal.' '.$info->ville.'</p>
+                    
+            ';
+            
         }
         ?>
        

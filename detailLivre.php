@@ -8,7 +8,7 @@
             require_once('connexionbase.php');    
 
             $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where livre.titre = :titre ");
-            $stmt->bindValue(":titre", $_GET['titre']); 
+            $stmt->bindValue(":navBar", $_GET['titre']); 
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
             $livre = $stmt->fetch();
@@ -34,12 +34,15 @@
             $stmt->bindValue(":titre", $_GET['titre']); 
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
-            $livre = $stmt->fetch();
+            $present = $stmt->fetch();
 
-            si le livre est présent dans la réponse donner, alors afficher emprunter, sinon afficher disponible + le texte : pour pouvoir.....
+            echo ''
+
+            if(!isset($_POST['btnEnvoyer']) && ('.$livre->titre.' = '.$present->titre') )
+            { echo '<h1> DISPONIBLE </h1> Pour pouvoir reserver, vous devez possédez un compte ou vous identifier';
             
-
-        
+            }
+            else 
         
         ?>
 
