@@ -49,15 +49,14 @@
                           <form method="post">
                           <input type="submit" name="reessaye" value="réessayer">
                           </form>
-                          ';
-                          
-                }  
-                if ($_POST['reessaye']){
+                          ';  
+                    if ($_POST['reessaye']){
                     header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
-                }
+                }                        
+                }  
+                
             }
             
-                      
         ?>
        
     </div>        

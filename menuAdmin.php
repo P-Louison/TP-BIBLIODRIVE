@@ -1,1 +1,2 @@
-<input type="submit" name="ajoutClient" value="Ajout d'un client" >
+<input type="submit" name="ajoutClient" value="tristan" >
+

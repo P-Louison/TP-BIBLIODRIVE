@@ -70,6 +70,8 @@
                       </div>';
             }
             if ($_SESSION['profil'] == "client" && $present ){
+                header("Location: http://localhost/TP-BIBLIODRIVE/accueille.php");
+                
                 echo '<div>
                         Disponible 
                       </div>';
