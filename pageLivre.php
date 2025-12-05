@@ -11,11 +11,11 @@
             $stmt->bindValue(":navBar", "%".$_GET['navBar']."%"); 
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
-            for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) 
-            {
+            for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                 $nom = $stmt->fetch();
 
-                echo "<a href='http://localhost/TPPHP/TP%20BIBLIODRIVE/detailLivre.php?titre=".$nom->titre."'>".$nom->titre.' ('.$nom->anneeparution.')</a><BR>';
+                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> '.$nom->titre.' ('.$nom->anneeparution.') </a><BR>';
+            
             }
         ?>
     </div>

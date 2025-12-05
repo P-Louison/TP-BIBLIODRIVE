@@ -13,6 +13,8 @@
                 <br>
                 <input type="submit" name="btnEnvoyer" value="Connexion" >
                 </form>';
+                $_SESSION['profil'] = "";
+                
 
                 
             }
@@ -34,12 +36,25 @@
                     <p>'.$info->adresse.'</p>
                     <p>'.$info->codepostal.' '.$info->ville.'</p>    
                     ';
+                    $_SESSION['profil'] = $info->profil;
+                    
+                    if ($_SESSION['profil'] == "admin"){
+                        header("Location: http://localhost/tP-BIBLIODRIVE/menuAdmin.php");
+                    }
+
                 }
                 else
                 {
-                    echo "l'identifiant ou le mot de passe est différent";
-
+                    echo ' <p> identifiant ou le mot de passe est différent </p>
+                          <form method="post">
+                          <input type="submit" name="reessaye" value="réessayer">
+                          </form>
+                          ';
+                          
                 }  
+                if ($_POST['reessaye']){
+                    header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
+                }
             }
             
                       

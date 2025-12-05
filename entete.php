@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +23,6 @@
             La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
             Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
             
-            test sur le boutton pour blocIdentification 8.18
-            si pas cliqué afficher a vide, sinon afficher le menu administrateur
-
 
         </p>
         <br>
@@ -47,7 +49,7 @@
         </div>
 
         <div class="col-md-2 container-fluid">
-            <img src="./image/chateauMoulinsart.jpg" class="float-end" width="100%">
+             <a href="http://localhost/TP-BIBLIODRIVE/acceuille.php"><img src="./image/chateauMoulinsart.jpg" class="float-end" width="100%"></a>
         </div>
     </div>
     
