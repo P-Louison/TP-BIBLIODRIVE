@@ -6,7 +6,7 @@
 
 
 <div class="row container-fluid">
-  <div class="col-md-10 container-fluid">
+  <div class="col-md-10 container-fluid decor">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <?php
           require_once('connexionbase.php');

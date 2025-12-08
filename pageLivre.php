@@ -5,7 +5,6 @@
     <div class="col-md-10 container-fluid">  
         <?php
             require_once('connexionbase.php');    
-            $recherche = $_GET['navBar'];
 
             $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where auteur.nom like :navBar");
             $stmt->bindValue(":navBar", "%".$_GET['navBar']."%"); 

@@ -12,6 +12,7 @@
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
             $livre = $stmt->fetch();
+            $_SESSION['TitreLivre'] = $livre->titre;
 
             echo '<div class="row container-fluid"> 
                     <div class="col-md-6 container-fluid"> 
@@ -30,50 +31,40 @@
                     </div>
                   </div>';
 
+            $num = $livre->nolivre;
             
-            
-            $stmt = $connexion->prepare("SELECT * FROM emprunter INNER JOIN livre ON emprunter.nolivre = livre.titre = :titre");
-            $stmt->bindValue(":titre", $_GET['titre']); 
-            $stmt->setFetchMode(PDO::FETCH_OBJ);
+            $stmt = $connexion->prepare("SELECT * FROM emprunter INNER JOIN livre ON emprunter.nolivre = livre.nolivre where :nolivre = emprunter.nolivre");
+            $stmt->bindValue(":nolivre", $num); 
+            $stmt->setFetchMode(PDO::PARAM_INT);
             $stmt->execute();
             $present = $stmt->fetch();
-//_____________________________________ADMIN________________________________________________________________________
-            if ($_SESSION['profil'] == "admin" && $present == NULL ){
-                echo '<div>
-                        Indisponible 
-                      </div>';
-            }
-            if ($_SESSION['profil'] == "admin" && $present ){
-                echo '<div>
-                        Disponible 
-                      </div>';
-            }
+            
 //______________________________________PAS CONNECTE_______________________________________________________________________           
-            if ($_SESSION['profil'] == "" && $present == NULL){
-
+            if ($_SESSION['profil'] == "" && $present ){
 
                 echo '<div>
-                        Indisponible 
+                            Indisponible
                       </div>
                           Veuiller vous connecter avant de pouvoir emprunter un livre';
             }
-            if ($_SESSION['profil'] == "" && $present){
+            elseif ($_SESSION['profil'] == "" && $present = true)
+            {
                 echo '<div>
-                        Disponible 
+                            disponible
                       </div>
                           Veuiller vous connecter avant de pouvoir emprunter un livre';
             }
 //____________________________________CLIENT_________________________________________________________________________
-            if ($_SESSION['profil'] == "client" && $present == NULL && !isset($_POST['btnEnvoyer'])){
+            if ($_SESSION['profil'] == "client" && $present )
+                {
                 echo '<div>
-                        Indisponible 
+                        Indisponible
                       </div>';
             }
-            if ($_SESSION['profil'] == "client" && $present ){
-                header("Location: http://localhost/TP-BIBLIODRIVE/accueille.php");
-                
+            elseif ($_SESSION['profil'] == "client" && $present = true)
+            {
                 echo '<div>
-                        Disponible 
+                         disponible
                       </div>';
             }
 
