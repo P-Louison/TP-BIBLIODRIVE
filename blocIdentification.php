@@ -30,30 +30,44 @@
                 $info = $stmt->fetch();
 
                 if($info)
-                {                                                                                               
-                    echo '<p>'.$info->prenom.'  '.$info->nom.'</p>
-                    <p>'.$info->mel.'</p>
-                    <p>'.$info->adresse.'</p>
-                    <p>'.$info->codepostal.' '.$info->ville.'</p>    
-                    ';
+                {          
+                    if(!isset($_POST['btnDeconnexion'])){             
+                    
+                        echo ' <p>'.$info->prenom.'  '.$info->nom.'</p>
+                        <p>'.$info->mel.'</p>
+                        <p>'.$info->adresse.'</p>
+                        <p>'.$info->codepostal.' '.$info->ville.'</p>    
+                        <input type="submit" name="deconnexion" value="déconnexion">
+                        bouton deconnexion a finir, ne renvoie pas le lien
+                        ';
+                    }
+                    else{
+                        header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
+                        $_SESSION['profil'] = "";
+                    }
+
+
+
                     $_SESSION['profil'] = $info->profil;
                     
                     if ($_SESSION['profil'] == "admin"){
                         header("Location: http://localhost/tP-BIBLIODRIVE/menuAdmin.php");
                     }
-                    
 
                 }
                 else
                 {
+                    
+                    if (!isset($_POST['reessaye'])){
                     echo ' <p> identifiant ou le mot de passe est différent </p>
                           <form method="post">
                           <input type="submit" name="reessaye" value="réessayer">
                           </form>
                           ';  
-                    if ($_POST['reessaye']){
-                    header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
-                }                        
+                    }          
+                    else{
+                        header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
+                    }              
                 }  
                 
             }

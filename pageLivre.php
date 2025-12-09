@@ -20,7 +20,7 @@
     </div>
     
     <?php
-    include_once 'blocIdentification.php';
+    require_once 'blocIdentification.php';
     ?>
 
     

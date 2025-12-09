@@ -33,39 +33,38 @@
 
             $num = $livre->nolivre;
             
-            $stmt = $connexion->prepare("SELECT * FROM emprunter INNER JOIN livre ON emprunter.nolivre = livre.nolivre where :nolivre = emprunter.nolivre");
+            $stmt = $connexion->prepare("SELECT * FROM emprunter where emprunter.nolivre = :nolivre order by dateemprunt desc");
             $stmt->bindValue(":nolivre", $num); 
             $stmt->setFetchMode(PDO::PARAM_INT);
             $stmt->execute();
             $present = $stmt->fetch();
-            
 //______________________________________PAS CONNECTE_______________________________________________________________________           
-            if ($_SESSION['profil'] == "" && $present ){
-
-                echo '<div>
-                            Indisponible
-                      </div>
-                          Veuiller vous connecter avant de pouvoir emprunter un livre';
-            }
-            elseif ($_SESSION['profil'] == "" && $present = true)
-            {
+            if (($_SESSION['profil'] == "" && $present && $present->dateretour != NULL ) || (!$present)){
                 echo '<div>
                             disponible
                       </div>
                           Veuiller vous connecter avant de pouvoir emprunter un livre';
             }
-//____________________________________CLIENT_________________________________________________________________________
-            if ($_SESSION['profil'] == "client" && $present )
-                {
+            elseif (($_SESSION['profil'] == "" && $present && $present->dateretour == NULL ) || (!$present)) {
                 echo '<div>
-                        Indisponible
-                      </div>';
+                            indisponible
+                      </div>
+                          Veuiller vous connecter avant de pouvoir emprunter un livre';
             }
-            elseif ($_SESSION['profil'] == "client" && $present = true)
-            {
+
+//____________________________________CLIENT_________________________________________________________________________
+            if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || (!$present)){
                 echo '<div>
-                         disponible
-                      </div>';
+                            disponible
+                      </div>
+                      ';
+                         
+            }
+            elseif (($_SESSION['profil'] == "client" && $present && $present->dateretour == NULL ) || (!$present)) {
+                echo '<div>
+                            indisponible
+                      </div>
+                          ';
             }
 
 
@@ -75,5 +74,5 @@
         ?>
     </div>
     <?php
-        include_once 'blocIdentification.php';
+        require_once 'blocIdentification.php';
     ?>
