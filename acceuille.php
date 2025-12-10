@@ -9,6 +9,7 @@
   <div class="col-md-10 container-fluid decor">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <?php
+                 
           require_once('connexionbase.php');
           $stmt = $connexion->prepare("SELECT * FROM livre ORDER BY dateajout DESC");
           $stmt->setFetchMode(PDO::FETCH_OBJ);

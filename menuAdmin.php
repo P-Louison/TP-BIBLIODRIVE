@@ -1,2 +1,4 @@
-<input type="submit" name="ajoutClient" value="tristan" >
+<?php
+    include 'enteteAdmin.php';
+?>
 

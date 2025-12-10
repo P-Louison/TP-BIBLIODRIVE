@@ -55,7 +55,7 @@
 //____________________________________CLIENT_________________________________________________________________________
             if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || (!$present)){
                 echo '<div>
-                            disponible
+                            DISPONIBLE       <button type="button" class="btn btn-outline-success">Ajouter au panier</button>
                       </div>
                       ';
                          
