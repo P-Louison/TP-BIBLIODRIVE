@@ -1,16 +1,48 @@
 <?php
     include 'enteteAdmin.php'
 ?>
-    <form action="AjoutMembreBase.php" method="post">
+
+<div class="row container-fluid">
+    <div class="col-md-10">
+        <form action="AjoutLivreBase.php" method="post">
         
-        Auteur : <select name="cars" id="cars">
-                    <option value="auteur"> auteur </option>
+        Auteur : <select name="auteur" id="cars">
+                    <?php
+                        require_once('connexionbase.php');   
+
+                        $stmt = $connexion->prepare("SELECT DISTINCT(nom) FROM auteur");
+                        
+                        $stmt->setFetchMode(PDO::FETCH_OBJ);
+                        $stmt->execute();
+                        
+                        for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
+                            $result = $stmt->fetch();
+                            $_SESSION['nomAuteurAjoutLivre'] = $result->nom;
+                            echo ' <option value="'.$_SESSION['nomAuteurAjoutLivre'].'"> '.$_SESSION['nomAuteurAjoutLivre'].'</option>';
+                        }
+                    ?>
+                    
+                    
+                    
                 </select>
         <br> 
         Titre : <input type="txt" name="titre">
-        
-
+        <br>
+        ISBN : <input type="txt" name="isbn">
+        <br>
+        Année de parution : <input type="txt" name="anneeparution">
+        <br>
+        Résumé : <input type="txt" name="resumer">
+        <br>
+        Image : <input type="txt" name="imageLivre">
+        <br>
+        <input type="submit" value="Valider">
     </form>
+    
+    </div>
+    <?php
+        include_once 'blocIdentification.php';
+    ?>
 
 </body>
 </html>
