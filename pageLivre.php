@@ -13,7 +13,7 @@
             for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                 $nom = $stmt->fetch();
 
-                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> '.$nom->titre.' ('.$nom->anneeparution.') </a><BR>';
+                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> '.$nom->titre.' </a><BR>';
             
             }
         ?>

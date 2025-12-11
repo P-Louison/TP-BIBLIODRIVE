@@ -14,8 +14,6 @@
             $livre = $stmt->fetch();
             $_SESSION['TitreLivre'] = $livre->titre;
 
-            echo date("Y-d-m");
-
             echo '<div class="row container-fluid"> 
                     <div class="col-md-6 container-fluid"> 
                         
