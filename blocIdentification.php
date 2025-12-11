@@ -9,7 +9,7 @@
                 <h4>Connexion </h4>
                 <form action="" method="post">
                 Identifiant : <input type="text" name="txtNom"><br>
-                Mot de passe : <input type="password" name="txtMdp"><br>
+                Mot de passe : <input type="password" name="txtMdp"> <br>
                 <br>
                 <input type="submit" name="btnEnvoyer" value="Connexion" >
                 </form>';
