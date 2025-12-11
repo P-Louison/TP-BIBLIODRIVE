@@ -32,19 +32,21 @@
 
                 if($info)
                 {          
-                    if(!isset($_POST['btnDeconnexion'])){             
+                    if(!isset($_POST['btndeconnexion'])){             
                     
                         echo ' <p>'.$info->prenom.'  '.$info->nom.'</p>
                         <p>'.$info->mel.'</p>
                         <p>'.$info->adresse.'</p>
-                        <p>'.$info->codepostal.' '.$info->ville.'</p>    
-                        <input type="submit" name="deconnexion" value="déconnexion">
-                        bouton deconnexion a finir, ne renvoie pas le lien
+                        <p>'.$info->codepostal.' '.$info->ville.'</p>   
+                        <form method="post">
+                          <input type="submit" name="btndeconnexion" value="déconnexion">
+                        </form>
                         ';
                     }
                     else{
-                        header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
                         $_SESSION['profil'] = "";
+                        header("Location: http://localhost/tP-BIBLIODRIVE/accueille.php");
+                        
                     }
 
 

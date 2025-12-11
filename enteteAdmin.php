@@ -8,38 +8,31 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
 </head>
 <body>
 
-
-
-
     <div class="row container-fluid">
         <div class="col-md-10">
-        <p>
-            La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
-            Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
-            
+            <p>
+                La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
+                Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
+            </p>
+            <br>
 
-        </p>
-        <br>
-
-        <ul class="nav nav-tabs nav-justified">
-    <li class="nav-item">
-      <a class="nav-link active" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-  </ul>
-
+            <ul class="nav nav-tabs nav-justified">
+                <li class="nav-item">
+                <a class="nav-link active" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
 
         </div>
 

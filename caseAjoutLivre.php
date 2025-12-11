@@ -32,7 +32,7 @@
         <br>
         Année de parution : <input type="txt" name="anneeparution">
         <br>
-        Résumé : <input type="txt" name="resumer">
+        Résumé : <input type="txt" name="detail">
         <br>
         Image : <input type="txt" name="imageLivre">
         <br>

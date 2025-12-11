@@ -5,27 +5,33 @@
     $titre = $_POST['titre'];
     $isbn = $_POST['isbn'];
     $anneeparution = $_POST['anneeparution'];
-    $resumer = $_POST['resumer'];
-    $photo = $_POST['photo'];
+    $detail = $_POST['detail'];
+    $imageLivre = $_POST['imageLivre'];
+    
+    $dateactuel = date("Y-m-d");
 
-faire une requete sql pour recuperer le numero de auteur par rapport a son recuperer dans la case auteur,
-puis le bindvalues, faire correspondre le noauteur a la variable donner qui a joint le nom et le numero
+    $recupnoauteur = $connexion->prepare("SELECT noauteur FROM auteur where nom = :nomauteur");
+    $recupnoauteur->bindValue(":nomauteur", $auteur ); 
+    $recupnoauteur->setFetchMode(PDO::PARAM_INT);
+    $recupnoauteur->execute();
+    $recupnoauteur->fetch();
+    $noauteur = $recupnoauteur;
 
-
-    $sql = "INSERT INTO utilisateur (auteur, titre, isbn13, anneeparution, datail, photo) VALUES (:auteur, :titre, :isbn13, :anneeparution, :detail, :photo)";
+    $sql = "INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, dateajout, photo) 
+                                VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :dateajout, :imageLivre)";
     $stmt = $connexion->prepare($sql);
 
-    $stmt->bindValue(":auteur", $mel); 
+    
+    $stmt->bindValue(":noauteur", $noauteur, PDO::PARAM_INT);
     $stmt->bindValue(":titre", $titre);
     $stmt->bindValue(":isbn13", $isbn); 
     $stmt->bindValue(":anneeparution", $anneeparution);
     $stmt->bindValue(":detail", $detail); 
-    $stmt->bindValue(":photo", $photo); 
-
+    $stmt->bindValue(":dateajout", $dateactuel); 
+    $stmt->bindValue(":imageLivre", $imageLivre); 
 
     $stmt->execute();
     $nb_ligne_affectees = $stmt->rowCount();
     echo $nb_ligne_affectees." ligne() insérée(s).<BR>";
-
-
+    
 ?>
