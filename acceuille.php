@@ -1,7 +1,7 @@
 
 
 <?php
-    require 'entete.php';
+    include 'entete.php';
     ?>
 
 
@@ -35,7 +35,7 @@
 
     </div>
     <?php
-    require_once 'blocIdentification.php';
+    include 'blocIdentification.php';
     ?>
   </div>
   

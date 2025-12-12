@@ -19,7 +19,7 @@
             </p>
             <br>
 
-            <ul class="nav nav-tabs nav-justified">
+            <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
                 <a class="nav-link active" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
                 </li>
