@@ -13,25 +13,30 @@
             $stmt->execute();
             $livre = $stmt->fetch();
             $_SESSION['TitreLivre'] = $livre->titre;
+            $_SESSION['PrenomAuteur'] = $livre->prenom;
+            $_SESSION['NomAuteur'] = $livre->nom;
+            $_SESSION['isbnLivre'] = $livre->isbn13;
+            $_SESSION['DetailLivre'] = $livre->detail;
+            $_SESSION['PhotoLivre'] = $livre->photo;
+
 
             echo '<div class="row container-fluid"> 
                     <div class="col-md-6 container-fluid"> 
                         
-                        <h4> Auteur : '.$livre->prenom.'  '.$livre->nom.'</h4>
-                        <h3> ISBN13 : '.$livre->isbn13.'</h3>
+                        <h4> Auteur : '.$_SESSION['PrenomAuteur'].'  '.$_SESSION['NomAuteur'].'</h4>
+                        <h4>  '.$_SESSION['TitreLivre'].'</h4>
+                        <h4> ISBN13 : '.$_SESSION['isbnLivre'].'</h4>
 
                         <h4>Résumé du livre </h4> <br>
-                        <h5>'.$livre->detail.'</h5>
+                        <h5>'.$_SESSION['DetailLivre'].'</h5>
                     </div>
                     <div class="col-md-4 container-fluid"> 
-                        
-                        <h3>'.$livre->prenom.'  '.$livre->nom.'</h3><br>
-                        <h5>  '.$livre->titre.'</h5><br>
-                        <img src="./image/'.$livre->photo.'" class="d-block mx-auto" style="width:60%">
+                        <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto" style="width:90%">
                     </div>
                   </div>';
 
             $num = $livre->nolivre;
+            $_SESSION['panier'] = array();
             
             $stmt = $connexion->prepare("SELECT * FROM emprunter where emprunter.nolivre = :nolivre order by dateemprunt desc");
             $stmt->bindValue(":nolivre", $num); 
@@ -55,9 +60,19 @@
 //____________________________________CLIENT_________________________________________________________________________
             if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || (!$present)){
                 echo '<div>
-                            DISPONIBLE       <button type="button" class="btn btn-outline-success">Ajouter au panier</button>
+                            DISPONIBLE    <button type="button" class="btn btn-outline-success" name="btnPanier">Ajouter au panier</button>
                       </div>
                       ';
+                    
+
+                if (!isset($_POST['btnPanier']) & (isset($_SESSION['profil']))){
+                    echo 'DDDDDDD';
+                }
+                else{
+                    array_push($_SESSION['panier'], $_SESSION['TitreLivre']);
+                }
+                
+                var_dump($_SESSION['panier']);
                          
             }
             elseif (($_SESSION['profil'] == "client" && $present && $present->dateretour == NULL ) || (!$present)) {
