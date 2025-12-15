@@ -43,7 +43,7 @@ session_start();
 
                 <form class="d-flex container-fluid" action="pageLivre.php" method="get">
                     <input class="form-control me-2" type="text" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)" name="navBar" >
-                    <a href="http://localhost/TP-BIBLIODRIVE/panierAffichage.php"> <button class="btn btn-primary" type="button">Panier</button> </a>
+                    <a href="http://localhost/TP-BIBLIODRIVE/panierAffichage.php"> <button class="btn btn-outline-success" type="button">Panier</button> </a>
                     
                 </form>
                 

@@ -1,6 +1,7 @@
-<div class="col-md-2 container-fluid" style="text-align: center;">
+    <div class="col-md-2 container-fluid" style="text-align: center;">
 
         <?php
+            
 
             if(isset($_SESSION['profil']) && ($_SESSION['profil'] != "")) 
             {
@@ -8,19 +9,20 @@
                     <p>'.$_SESSION['melAuteur'].'</p>
                     <p>'.$_SESSION['adresseAuteur'].'</p>
                     <p>'.$_SESSION['codepostaleAuteur'].' '.$_SESSION['villeAuteur'].'</p> 
-                    '; 
+                    </center>'; 
 
                 if(!isset($_POST['btndeconnexion'])){             
-                    echo '
+                    echo '<center>
                     <form method="post">
                     <input type="submit" name="btndeconnexion" value="déconnexion">
                     </form>
-                    ';
+                    </center>';
                 }
                 else{
                     session_destroy();
                     header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");   
                 }
+
                 
             }
             else 
@@ -35,6 +37,7 @@
                     <input type="submit" name="connecter" value="Connexion" >
                     </form>';
                     $_SESSION['profil'] = "";
+                    
                 }
                 else{
 
@@ -55,7 +58,9 @@
                         $_SESSION['adresseAuteur'] = $info->adresse;
                         $_SESSION['codepostaleAuteur'] = $info->codepostal;
                         $_SESSION['villeAuteur'] = $info->ville;
-                        $_SESSION['profil'] = $info->profil; 
+                        $_SESSION['profil'] = $info->profil;
+                        $panier = array();
+                        $_SESSION['panier'] = $panier;
 
                     }
                     else
@@ -72,10 +77,17 @@
                             header("Location: http://localhost/TP-BIBLIODRIVE/accueille.php");
                         }              
                     } 
-                    header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                    if ($_SESSION['profil'] == "admin"){
+                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
+                    }
+                    else{
+                        header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                    }
+                    
                 }  
                 
             }
+            
             
             
         ?>

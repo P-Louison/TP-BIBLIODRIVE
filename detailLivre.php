@@ -18,6 +18,7 @@
             $_SESSION['isbnLivre'] = $livre->isbn13;
             $_SESSION['DetailLivre'] = $livre->detail;
             $_SESSION['PhotoLivre'] = $livre->photo;
+            
 
 
             echo '<div class="row container-fluid"> 
@@ -31,12 +32,12 @@
                         <h5>'.$_SESSION['DetailLivre'].'</h5>
                     </div>
                     <div class="col-md-4 container-fluid"> 
-                        <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto" style="width:90%">
+                        <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto" style="width:80%">
                     </div>
                   </div>';
 
             $num = $livre->nolivre;
-            $_SESSION['panier'] = array();
+            
             
             $stmt = $connexion->prepare("SELECT * FROM emprunter where emprunter.nolivre = :nolivre order by dateemprunt desc");
             $stmt->bindValue(":nolivre", $num); 
@@ -60,19 +61,22 @@
 //____________________________________CLIENT_________________________________________________________________________
             if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || (!$present)){
                 echo '<div>
-                            DISPONIBLE    <button type="button" class="btn btn-outline-success" name="btnPanier">Ajouter au panier</button>
+                            DISPONIBLE    
+                            <form action="" method="post" >
+                            <input type="submit" class="btn btn-outline-success" name="btnPanier" value="Ajouter au panier" >
+                        </form>
                       </div>
-                      ';
-                    
+                      ';             
 
-                if (!isset($_POST['btnPanier']) & (isset($_SESSION['profil']))){
-                    echo 'DDDDDDD';
+                if (!isset($_POST['btnPanier'])){
+                    
                 }
                 else{
-                    array_push($_SESSION['panier'], $_SESSION['TitreLivre']);
+                    $_SESSION['panier'][] = $_SESSION['TitreLivre'];
+                    echo 'Livre ajouté au panier !';
+                    
                 }
                 
-                var_dump($_SESSION['panier']);
                          
             }
             elseif (($_SESSION['profil'] == "client" && $present && $present->dateretour == NULL ) || (!$present)) {

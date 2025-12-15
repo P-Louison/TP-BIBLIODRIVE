@@ -5,12 +5,21 @@
 <div class="row container-fluid">
     <div class="col-md-10">
         <form action="AjoutLivreBase.php" method="post">
+
+        
         
         Auteur : <select name="auteur" id="cars">
                     <?php
                         require_once('connexionbase.php');   
 
                         $stmt = $connexion->prepare("SELECT DISTINCT(nom) FROM auteur");
+
+                        $recupnoauteur = $connexion->prepare("SELECT noauteur FROM auteur where nom = :nomauteur");
+                        $recupnoauteur->bindValue(":nomauteur", $auteur ); 
+                        $recupnoauteur->setFetchMode(PDO::PARAM_INT);
+                        $recupnoauteur->execute();
+                        $recupnoauteur->fetch();
+                        $noauteur = $recupnoauteur;
                         
                         $stmt->setFetchMode(PDO::FETCH_OBJ);
                         $stmt->execute();
@@ -18,7 +27,7 @@
                         for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                             $result = $stmt->fetch();
                             $_SESSION['nomAuteurAjoutLivre'] = $result->nom;
-                            echo ' <option value="'.$_SESSION['nomAuteurAjoutLivre'].'"> '.$_SESSION['nomAuteurAjoutLivre'].'</option>';
+                            echo ' <option value="'.$noauteur.'"> '.$_SESSION['nomAuteurAjoutLivre'].'</option>';
                         }
                     ?>
                     
