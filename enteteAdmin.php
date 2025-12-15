@@ -5,8 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" type="text/css" href="CSS.css"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 <body>
@@ -19,20 +21,46 @@
             </p>
             <br>
 
-            <ul class="nav nav-pills nav-justified">
-                <li class="nav-item">
-                <a class="nav-link active" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">Disabled</a>
-                </li>
-            </ul>
+            <div class="container mt-4">
+                
+                <br>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">supprimer livre/membre ?</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">retour au menu</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="accueilMenu" class="container tab-pane active"><br>
+                    <?php
+                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
+                    ?>
+                    </div>
+                    <div id="menu1" class="container tab-pane fade"><br>
+                    <?php
+                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
+                    ?>
+                    </div>
+                    <div id="menu2" class="container tab-pane fade"><br>
+                    <?php
+                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
+                    ?>
+                    </div>
+                </div>
+                </div>
+
+
 
         </div>
 

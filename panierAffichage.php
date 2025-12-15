@@ -7,16 +7,20 @@
         <h2> Votre panier </h2>
         
         <?php
-            if (isset($_SESSION['panier'])){
+            if (isset($_SESSION['panier']) && ($_SESSION['panier'] != "")){
                 for($x = 0; $x < count($_SESSION['panier']); $x++) {
                 echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$_SESSION['panier'][$x].'"> '.$_SESSION['panier'][$x].' </a><br>';
                 }
                 
             }
-            else{
-                
+            elseif ($_SESSION['panier'] != ""){
                 echo 'le panier est vide';
             }
+            else{
+                echo "veuillez-vous connecter avant d'avoir accès au panier  ";
+            }
+
+            
             
             if(!isset($_POST['btnViderPanier'])){             
                     echo '

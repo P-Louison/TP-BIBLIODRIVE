@@ -1,7 +1,7 @@
 <?php
     require_once('connexionbase.php');
 
-    $auteur = $_POST['auteur'];
+    $noauteur = $_POST['auteur'];
     $titre = $_POST['titre'];
     $isbn = $_POST['isbn'];
     $anneeparution = $_POST['anneeparution'];
@@ -9,13 +9,6 @@
     $imageLivre = $_POST['imageLivre'];
     
     $dateactuel = date("Y-m-d");
-
-    $recupnoauteur = $connexion->prepare("SELECT noauteur FROM auteur where nom = :nomauteur");
-    $recupnoauteur->bindValue(":nomauteur", $auteur ); 
-    $recupnoauteur->setFetchMode(PDO::PARAM_INT);
-    $recupnoauteur->execute();
-    $recupnoauteur->fetch();
-    $noauteur = $recupnoauteur;
 
     $sql = "INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, dateajout, photo) 
                                 VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :dateajout, :imageLivre)";

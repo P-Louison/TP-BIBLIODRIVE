@@ -37,6 +37,7 @@
                     <input type="submit" name="connecter" value="Connexion" >
                     </form>';
                     $_SESSION['profil'] = "";
+                    $_SESSION['panier'] = "";
                     
                 }
                 else{
@@ -61,6 +62,7 @@
                         $_SESSION['profil'] = $info->profil;
                         $panier = array();
                         $_SESSION['panier'] = $panier;
+                        header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
 
                     }
                     else
@@ -72,17 +74,16 @@
                             <input type="submit" name="reessaye" value="réessayer">
                             </form>
                             ';  
-                        }          
+                        }
                         else{
-                            header("Location: http://localhost/TP-BIBLIODRIVE/accueille.php");
-                        }              
+                             header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                        }          
+                                    
                     } 
                     if ($_SESSION['profil'] == "admin"){
                         header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
                     }
-                    else{
-                        header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
-                    }
+                    
                     
                 }  
                 

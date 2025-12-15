@@ -3,7 +3,7 @@
 ?>
 
 <div class="row container-fluid">
-    <div class="col-md-10">
+    <div class="col-md-10 texteCentrer">
         <form action="AjoutMembreBase.php" method="post">
             
             Mail : <input type="text" name="mel">
