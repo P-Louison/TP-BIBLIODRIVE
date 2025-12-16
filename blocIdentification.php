@@ -1,7 +1,6 @@
     <div class="col-md-2 container-fluid" style="text-align: center;">
 
         <?php
-            
 
             if(isset($_SESSION['profil']) && ($_SESSION['profil'] != "")) 
             {
@@ -62,7 +61,15 @@
                         $_SESSION['profil'] = $info->profil;
                         $panier = array();
                         $_SESSION['panier'] = $panier;
-                        header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                        
+
+                        if ($_SESSION['profil'] == "admin"){
+                            header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
+                        }
+                        else{
+                            header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                        }
+
 
                     }
                     else
@@ -80,9 +87,7 @@
                         }          
                                     
                     } 
-                    if ($_SESSION['profil'] == "admin"){
-                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
-                    }
+                    
                     
                     
                 }  
@@ -95,3 +100,4 @@
        
     </div>        
 </div>
+

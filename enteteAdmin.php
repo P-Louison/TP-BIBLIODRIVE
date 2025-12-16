@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,44 +24,21 @@
             </p>
             <br>
 
-            <div class="container mt-4">
-                
-                <br>
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
+            <nav class="navbar navbar-expand-sm bg-light ">
+                <div class="container-fluid">
+                    <ul class="navbar-nav caseLien">
+                        <li class="nav-item " >
+                            <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">accueil</a>
+                        </li>
                     <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">supprimer livre/membre ?</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">retour au menu</a>
-                    </li>
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div id="accueilMenu" class="container tab-pane active"><br>
-                    <?php
-                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
-                    ?>
-                    </div>
-                    <div id="menu1" class="container tab-pane fade"><br>
-                    <?php
-                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
-                    ?>
-                    </div>
-                    <div id="menu2" class="container tab-pane fade"><br>
-                    <?php
-                        header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
-                    ?>
-                    </div>
+                    </ul>
                 </div>
-                </div>
+            </nav>
 
 
 
@@ -70,3 +50,7 @@
     </div>
     
 <br>
+
+
+
+

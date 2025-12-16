@@ -12,8 +12,7 @@ session_start();
 
 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -28,9 +27,11 @@ session_start();
         <p>
             La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
             Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
+            <br>
+            A FAIRE : regler message "panier vide après avoir sup tous les éléments"<br>
+                        pouvoir supprimer un livre en particulier (lien en class button qui met en GET le nom du livre puis le supprime du array)
+
             
-            A FAIRE : ENVOYER SUR LE MENU ADMINISTRATEUR 
-            + AFFICHAGE AJOUT DU NEW MEMBRE + AFFICHAGE AJOUT DU LIVRE
         </p>
         <br>
 

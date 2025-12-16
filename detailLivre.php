@@ -18,6 +18,7 @@
             $_SESSION['isbnLivre'] = $livre->isbn13;
             $_SESSION['DetailLivre'] = $livre->detail;
             $_SESSION['PhotoLivre'] = $livre->photo;
+            $_SESSION['nolivre'] = $livre->nolivre;
             
 
 
@@ -36,22 +37,22 @@
                     </div>
                   </div>';
 
-            $num = $livre->nolivre;
+            
             
             
             $stmt = $connexion->prepare("SELECT * FROM emprunter where emprunter.nolivre = :nolivre order by dateemprunt desc");
-            $stmt->bindValue(":nolivre", $num); 
+            $stmt->bindValue(":nolivre", $_SESSION['nolivre']); 
             $stmt->setFetchMode(PDO::PARAM_INT);
             $stmt->execute();
             $present = $stmt->fetch();
 //______________________________________PAS CONNECTE_______________________________________________________________________           
-            if (($_SESSION['profil'] == "" && $present && $present->dateretour != NULL ) || (!$present)){
+            if (($_SESSION['profil'] == "" && ($present && $present->dateretour != NULL )) || ($_SESSION['profil'] == "")&&(!$present)){
                 echo '<div>
                             disponible
                       </div>
                           Veuiller vous connecter avant de pouvoir emprunter un livre';
             }
-            elseif (($_SESSION['profil'] == "" && $present && $present->dateretour == NULL ) || (!$present)) {
+            elseif (($_SESSION['profil'] == "" && $present && $present->dateretour == NULL ) || ($_SESSION['profil'] == "")&&(!$present)) {
                 echo '<div>
                             indisponible
                       </div>
@@ -66,15 +67,26 @@
                             <input type="submit" class="btn btn-outline-success" name="btnPanier" value="Ajouter au panier" >
                         </form>
                       </div>
-                      ';             
+                      ';      
+                $dansLePanier = False;
+                for($x = 0; $x < count($_SESSION['panier']); $x++){
+                        if ($_SESSION['panier'][$x] == $_SESSION['TitreLivre']){
+                            $dansLePanier = True;
+                        }
+                            
+                    }
 
-                if (!isset($_POST['btnPanier'])){
-                    
-                }
-                else{
+                if (isset($_POST['btnPanier']) && $dansLePanier == False && (count($_SESSION['panier'])<6)){
+
                     $_SESSION['panier'][] = $_SESSION['TitreLivre'];
                     echo 'Livre ajouté au panier !';
                     
+                }
+                elseif (isset($_POST['btnPanier']) && $dansLePanier == True) {
+                        echo 'Le livre est déjà dans le panier !';
+                }
+                elseif (isset($_POST['btnPanier']) && count($_SESSION['panier'])>5) {
+                        echo 'Le panier est plein, vous ne pouvez plus y ajouter de livre !';
                 }
                 
                          

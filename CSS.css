@@ -1,5 +1,10 @@
 .texteCentrer{
     text-align: center;
 }
+
+.caseLien{
+    border: 5px;
+    text-overflow: chartreuse;
+}
 	
 	

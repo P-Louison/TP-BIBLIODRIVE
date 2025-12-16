@@ -11,5 +11,5 @@
         <?php
             include 'blocIdentification.php';
         ?>
-    </div>
+</div>
 
