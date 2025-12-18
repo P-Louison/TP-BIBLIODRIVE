@@ -1,10 +1,13 @@
 .texteCentrer{
     text-align: center;
+    
 }
 
-.caseLien{
-    border: 5px;
-    text-overflow: chartreuse;
+.caseBlocIdentification{
+    border-style:solid;
+    border-color: black;
+    border-radius: 5%;
+    
 }
 	
 	

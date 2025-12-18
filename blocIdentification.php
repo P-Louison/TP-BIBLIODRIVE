@@ -1,4 +1,4 @@
-    <div class="col-md-2 container-fluid" style="text-align: center;">
+    <div class="col-md-2 container-fluid texteCentrer caseBlocIdentification">
 
         <?php
 
@@ -13,7 +13,7 @@
                 if(!isset($_POST['btndeconnexion'])){             
                     echo '<center>
                     <form method="post">
-                    <input type="submit" name="btndeconnexion" value="déconnexion">
+                    <input type="submit" class="btn btn-outline-danger" name="btndeconnexion" value="déconnexion" >
                     </form>
                     </center>';
                 }
@@ -30,10 +30,10 @@
                     echo '
                     <h4>Connexion </h4>
                     <form action="" method="post">
-                    Identifiant : <input type="text" name="txtNom"><br>
-                    Mot de passe : <input type="password" name="txtMdp"> <br>
-                    <br>
-                    <input type="submit" name="connecter" value="Connexion" >
+                        Identifiant : <input type="text" name="txtNom"><br>
+                        Mot de passe : <input type="password" name="txtMdp"> <br>
+                        <br>
+                        <input type="submit" class="btn btn-outline-success" name="connecter" value="Connexion" >
                     </form>';
                     $_SESSION['profil'] = "";
                     $_SESSION['panier'] = "";

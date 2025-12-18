@@ -60,7 +60,7 @@
             }
 
 //____________________________________CLIENT_________________________________________________________________________
-            if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || (!$present)){
+            if (($_SESSION['profil'] == "client" && $present && $present->dateretour != NULL ) || ($_SESSION['profil'] == "client")&&(!$present)){
                 echo '<div>
                             DISPONIBLE    
                             <form action="" method="post" >
@@ -92,7 +92,7 @@
                 
                          
             }
-            elseif (($_SESSION['profil'] == "client" && $present && $present->dateretour == NULL ) || (!$present)) {
+            elseif (($_SESSION['profil'] == "client" && $present && $present->dateretour == NULL ) || ($_SESSION['profil'] == "client")&&(!$present)) {
                 echo '<div>
                             indisponible
                       </div>

@@ -38,7 +38,7 @@
             <br><br> 
             Image : <input type="txt" name="imageLivre">
             <br><br> 
-            <input type="submit" value="Valider">
+            <input type="submit" class="btn btn-outline-success" value="Valider" >
         </form>
     
     </div>

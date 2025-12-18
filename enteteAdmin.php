@@ -26,7 +26,7 @@ session_start();
 
             <nav class="navbar navbar-expand-sm bg-light ">
                 <div class="container-fluid">
-                    <ul class="navbar-nav caseLien">
+                    <ul class="navbar-nav">
                         <li class="nav-item " >
                             <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">accueil</a>
                         </li>

@@ -22,7 +22,7 @@
                                 </div>
                                 <br><br>
                                 <div class="col-md-3">
-                                    <a href="http://localhost/TP-BIBLIODRIVE/supprimeLivre.php?sup='.$_SESSION['panier'][$x].'"> <input type="submit" class="btn btn-outline-success" name="btnSupLivre" value="supprimer" > </a>
+                                    <a href="http://localhost/TP-BIBLIODRIVE/supprimeLivre.php?sup='.$_SESSION['panier'][$x].'"> <input type="submit" class="btn btn-outline-danger" name="btnSupLivre" value="supprimer" > </a>
                                 </div>
                             </div>
                                 ';
@@ -35,16 +35,13 @@
                         <div class="row">
                             <div class="col-md-7">
                             <form method="post">
-                            <input type="submit" name="emprunter" value="Emprunter le(s) livre(s)">
+                            <input type="submit" class="btn btn-outline-primary" name="emprunter" value="Emprunter le(s) livre(s)" >
                             </form>
                             </div>
                         
                         ';
                     }
                     else{
-
-                        /* faire un lien qui envoie une page qui va boucler avec les infos dans l'url | 
-                        similaire a la suppresion d'un livre en particulier*/
 
                         $dateactuel = date("Y-m-d");
                         require_once('connexionbase.php');
@@ -65,7 +62,7 @@
                     if(!isset($_POST['toutsupprimer'])){             
                             echo '<div class="col-md-3">
                             <form method="post">
-                            <input type="submit" name="toutsupprimer" value="Vider le panier">
+                            <input type="submit" class="btn btn-outline-danger" name="toutsupprimer" value="vider le panier" >
                             </form>
                             </div>
                         </div>

@@ -11,9 +11,7 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-
-
-
+<link rel="stylesheet" type="text/css" href="CSS.css"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -29,7 +27,7 @@ session_start();
             Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
             <br>
             A FAIRE : regler message "panier vide après avoir sup tous les éléments"<br>
-                        pouvoir supprimer un livre en particulier (lien en class button qui met en GET le nom du livre puis le supprime du array)
+                        pouvoir emprunter tous les livres a la fois, actuellement seulement 1 est possible, faire une boucle avec le session de panier
 
             
         </p>
