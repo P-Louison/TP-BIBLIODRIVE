@@ -79,6 +79,7 @@
                 if (isset($_POST['btnPanier']) && $dansLePanier == False && (count($_SESSION['panier'])<6)){
 
                     $_SESSION['panier'][] = $_SESSION['TitreLivre'];
+                    $_SESSION['posLibre'] = $_SESSION['posLibre'] + 1;
                     echo 'Livre ajouté au panier !';
                     
                 }
