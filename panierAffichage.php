@@ -18,67 +18,34 @@
 
                         echo '<div class="row">
                                 <div class="col-md-7">
-                                <a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$_SESSION['panier'][$x].'"> '.$_SESSION['panier'][$x].' </a><br>
+                                <a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$_SESSION['panier'][$x][3].'"> '.$_SESSION['panier'][$x][1].' '.$_SESSION['panier'][$x][2].', '.$_SESSION['panier'][$x][3].' ('.$_SESSION['panier'][$x][4].')</a><br>
                                 </div>
                                 <br><br>
                                 <div class="col-md-3">
-                                    <a href="http://localhost/TP-BIBLIODRIVE/supprimeLivre.php?sup='.$_SESSION['panier'][$x].'"> <input type="submit" class="btn btn-outline-danger" name="btnSupLivre" value="supprimer" > </a>
+                                    <a href="http://localhost/TP-BIBLIODRIVE/supprimeLivre.php?sup='.$_SESSION['panier'][$x][0].'"> <input type="submit" class="btn btn-outline-danger" value="supprimer" > </a>
                                 </div>
                             </div>
-                                ';
-                  
+                            ';               
                         }
 
-                    
-                    if(!isset($_POST['emprunter'])){             
-                        echo '
-                        <div class="row">
-                            <div class="col-md-7">
-                            <form method="post">
-                            <input type="submit" class="btn btn-outline-primary" name="emprunter" value="Emprunter le(s) livre(s)" >
-                            </form>
-                            </div>
-                        
-                        ';
-                    }
-                    else{
-
-                        $dateactuel = date("Y-m-d");
-                        require_once('connexionbase.php');
-
-                        $sql = "INSERT INTO emprunter (mel, nolivre, dateemprunt, dateretour) 
-                                    VALUES (:melutilisateur, :nolivre, :dateactuel, :dateretour)";
-                        $stmt = $connexion->prepare($sql);
-                        
-                        $stmt->bindValue(":melutilisateur", $_SESSION['melAuteur']);
-                        $stmt->bindValue(":nolivre", $_SESSION['nolivre']);
-                        $stmt->bindValue(":dateactuel", $dateactuel); 
-                        $stmt->bindValue(":dateretour", NULL);
-                        $stmt->execute();
-                        $nb_ligne_affectees = $stmt->rowCount();
-                        echo $nb_ligne_affectees." livre(s) sont emprunté(s) à votre nom !<BR>";
-                    
-                    }
-                    if(!isset($_POST['toutsupprimer'])){             
-                            echo '<div class="col-md-3">
-                            <form method="post">
-                            <input type="submit" class="btn btn-outline-danger" name="toutsupprimer" value="vider le panier" >
-                            </form>
-                            </div>
+                    echo '
+                    <div class="row">
+                        <div class="col-md-7">                           
+                        <a href="http://localhost/TP-BIBLIODRIVE/empruntMultiple.php"> <input type="submit" class="btn btn-outline-primary" value="Emprunter le(s) livre(s)" > </a>
+                        <br>
                         </div>
                         ';
-                    }
-                    else{
-                        unset($_SESSION['panier']);
-                        $_SESSION['panier'] == $panier;
 
-                        header("Location: http://localhost/TP-BIBLIODRIVE/panierAffichage.php");
-                    }
                     
+                    
+                    echo '<div class="col-md-3">
+                          <a href="http://localhost/TP-BIBLIODRIVE/viderPanier.php"> <input type="submit" class="btn btn-outline-danger" value="supprimer" > </a>      
+                          </div>
+                    </div>
+                    ';
+                    
+                                     
                 }
-                
-                
-                
             }
             else{
                 echo "veuillez-vous connecter avant d'avoir accès au panier";

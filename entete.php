@@ -26,9 +26,6 @@ session_start();
             La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
             Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
             <br>
-            A FAIRE : regler message "panier vide après avoir sup tous les éléments"<br>
-                        pouvoir emprunter tous les livres a la fois, actuellement seulement 1 est possible, faire une boucle avec le session de panier
-
             
         </p>
         <br>

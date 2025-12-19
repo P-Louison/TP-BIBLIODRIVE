@@ -19,6 +19,7 @@
             $_SESSION['DetailLivre'] = $livre->detail;
             $_SESSION['PhotoLivre'] = $livre->photo;
             $_SESSION['nolivre'] = $livre->nolivre;
+            $_SESSION['anneeparution'] = $livre->anneeparution;
             
 
 
@@ -78,7 +79,7 @@
 
                 if (isset($_POST['btnPanier']) && $dansLePanier == False && (count($_SESSION['panier'])<6)){
 
-                    $_SESSION['panier'][] = $_SESSION['TitreLivre'];
+                    $_SESSION['panier'][] = array($_SESSION['nolivre'] ,$_SESSION['PrenomAuteur'], $_SESSION['NomAuteur'], $_SESSION['TitreLivre'], $_SESSION['anneeparution']);
                     $_SESSION['posLibre'] = $_SESSION['posLibre'] + 1;
                     echo 'Livre ajouté au panier !';
                     
