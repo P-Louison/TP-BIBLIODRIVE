@@ -7,7 +7,7 @@ session_start();
     $dateactuel = date("Y-m-d");
     require_once('connexionbase.php'); 
 
-    for ($i = 0; $i <= ($_SESSION['posLibre'])-1; $i++){
+    for ($i = 0; $i <= count($_SESSION['panier']); $i++){
         
         $stmt = $connexion->prepare("INSERT INTO emprunter (mel, nolivre, dateemprunt, dateretour) 
             VALUES (:melutilisateur, :nolivre, :dateactuel, :dateretour)");
@@ -18,10 +18,11 @@ session_start();
         $stmt->bindValue(":dateretour", NULL);
         $stmt->execute();
 
-        $_SESSION['nbLivreEmprunt'] + $stmt->rowCount();
+        $_SESSION['nbLivreEmprunt'] += $stmt->rowCount();
     }
 
+    header("Location: http://localhost/TP-BIBLIODRIVE/panierApresEmprunt.php");
 
-    header("Location: http://localhost/TP-BIBLIODRIVE/panierAffichage.php");
+   
 
 ?>

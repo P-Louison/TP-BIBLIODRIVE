@@ -3,7 +3,7 @@
 ?>
 
 <div class="row container-fluid"> 
-    <div class="col-md-10 container-fluid " style="text-align: center;">  
+    <div class="col-md-10 container-fluid texteCentrer">  
         <h2> Votre panier </h2>
         
         <?php
@@ -39,7 +39,7 @@
                     
                     
                     echo '<div class="col-md-3">
-                          <a href="http://localhost/TP-BIBLIODRIVE/viderPanier.php"> <input type="submit" class="btn btn-outline-danger" value="supprimer" > </a>      
+                          <a href="http://localhost/TP-BIBLIODRIVE/viderPanier.php"> <input type="submit" class="btn btn-outline-danger" value="Vider le panier" > </a>      
                           </div>
                     </div>
                     ';
