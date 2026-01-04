@@ -7,7 +7,7 @@ session_start();
     $dateactuel = date("Y-m-d");
     require_once('connexionbase.php'); 
 
-    for ($i = 0; $i <= count($_SESSION['panier']); $i++){
+    for ($i = 0; $i < count($_SESSION['panier']); $i++){
         
         $stmt = $connexion->prepare("INSERT INTO emprunter (mel, nolivre, dateemprunt, dateretour) 
             VALUES (:melutilisateur, :nolivre, :dateactuel, :dateretour)");

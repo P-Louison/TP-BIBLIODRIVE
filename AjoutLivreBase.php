@@ -1,30 +1,45 @@
-<?php
-    require_once('connexionbase.php');
+    <?php
+        include 'enteteAdmin.php';
+    ?>
 
-    $noauteur = $_POST['auteur'];
-    $titre = $_POST['titre'];
-    $isbn = $_POST['isbn'];
-    $anneeparution = $_POST['anneeparution'];
-    $detail = $_POST['detail'];
-    $imageLivre = $_POST['imageLivre'];
+    <?php
+        require_once('connexionbase.php');
+
+        $noauteur = $_POST['auteur'];
+        $titre = $_POST['titre'];
+        $isbn = $_POST['isbn'];
+        $anneeparution = $_POST['anneeparution'];
+        $detail = $_POST['detail'];
+        $imageLivre = $_POST['imageLivre'];
+        
+        $dateactuel = date("Y-m-d");
+
+        $sql = "INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, dateajout, photo) 
+                                    VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :dateajout, :imageLivre)";
+        $stmt = $connexion->prepare($sql);
+
+        
+        $stmt->bindValue(":noauteur", $noauteur, PDO::PARAM_INT);
+        $stmt->bindValue(":titre", $titre);
+        $stmt->bindValue(":isbn13", $isbn); 
+        $stmt->bindValue(":anneeparution", $anneeparution);
+        $stmt->bindValue(":detail", $detail); 
+        $stmt->bindValue(":dateajout", $dateactuel); 
+        $stmt->bindValue(":imageLivre", $imageLivre); 
+
+        $stmt->execute();
+        $nb_ligne_affectees = $stmt->rowCount();
     
-    $dateactuel = date("Y-m-d");
+        
+    ?>
 
-    $sql = "INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, dateajout, photo) 
-                                VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :dateajout, :imageLivre)";
-    $stmt = $connexion->prepare($sql);
+    <div class="row container-fluid">
+        <div class="col-md-10 texteCentrer">
+            <h3> le livre à bien été ajouté !</h3>
+        </div>
 
-    
-    $stmt->bindValue(":noauteur", $noauteur, PDO::PARAM_INT);
-    $stmt->bindValue(":titre", $titre);
-    $stmt->bindValue(":isbn13", $isbn); 
-    $stmt->bindValue(":anneeparution", $anneeparution);
-    $stmt->bindValue(":detail", $detail); 
-    $stmt->bindValue(":dateajout", $dateactuel); 
-    $stmt->bindValue(":imageLivre", $imageLivre); 
-
-    $stmt->execute();
-    $nb_ligne_affectees = $stmt->rowCount();
-    echo $nb_ligne_affectees." ligne() insérée(s).<BR>";
-    
-?>
+    <?php
+        include 'blocIdentification.php';
+    ?>
+        
+</div>

@@ -1,30 +1,46 @@
-<?php
-    require_once('connexionbase.php');
+    <?php
+        include 'enteteAdmin.php';
+    ?>
 
-    $mel = $_POST['mel'];
-    $motdepasse = $_POST['motdepasse'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $adresse = $_POST['adresse'];
-    $ville = $_POST['ville'];
-    $codepostal = $_POST['codepostal'];
-    $profil = $_POST['profil'];
+    <?php
+        require_once('connexionbase.php');
 
-    $sql = "INSERT INTO utilisateur (mel, motdepasse, nom, prenom, adresse, ville, codepostal, profil) VALUES (:mel, :motdepasse, :nom, :prenom, :adresse, :ville, :codepostal, :profil)";
-    $stmt = $connexion->prepare($sql);
+        $mel = $_POST['mel'];
+        $motdepasse = $_POST['motdepasse'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $adresse = $_POST['adresse'];
+        $ville = $_POST['ville'];
+        $codepostal = $_POST['codepostal'];
+        $profil = $_POST['profil'];
 
-    $stmt->bindValue(":mel", $mel); 
-    $stmt->bindValue(":motdepasse", $motdepasse);
-    $stmt->bindValue(":nom", $nom); 
-    $stmt->bindValue(":prenom", $prenom);
-    $stmt->bindValue(":adresse", $adresse); 
-    $stmt->bindValue(":ville", $ville); 
-    $stmt->bindValue(":codepostal", $codepostal);
-    $stmt->bindValue(":profil", $profil);
+        $sql = "INSERT INTO utilisateur (mel, motdepasse, nom, prenom, adresse, ville, codepostal, profil) VALUES (:mel, :motdepasse, :nom, :prenom, :adresse, :ville, :codepostal, :profil)";
+        $stmt = $connexion->prepare($sql);
 
-    $stmt->execute();
-    $nb_ligne_affectees = $stmt->rowCount();
-    echo $nb_ligne_affectees." ligne() insérée(s).<BR>";
+        $stmt->bindValue(":mel", $mel); 
+        $stmt->bindValue(":motdepasse", $motdepasse);
+        $stmt->bindValue(":nom", $nom); 
+        $stmt->bindValue(":prenom", $prenom);
+        $stmt->bindValue(":adresse", $adresse); 
+        $stmt->bindValue(":ville", $ville); 
+        $stmt->bindValue(":codepostal", $codepostal);
+        $stmt->bindValue(":profil", $profil);
+
+        $stmt->execute();
+        $nb_ligne_affectees = $stmt->rowCount();
 
 
-?>
+    ?>
+    
+    <div class="row container-fluid">
+        <div class="col-md-10 texteCentrer">
+            <h1> l'utilisateur à bien été ajouté !</h1>
+        </div>
+
+    <?php
+        include 'blocIdentification.php';
+    ?>
+        
+</div>
+
+

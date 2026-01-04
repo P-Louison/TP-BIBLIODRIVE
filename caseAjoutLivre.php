@@ -7,7 +7,7 @@
         
         <form action="AjoutLivreBase.php" method="post">
 
-        Auteur : <select name="auteur" id="cars">
+        Auteur : <select name="auteur">
                     <?php
                         require_once('connexionbase.php');   
 
