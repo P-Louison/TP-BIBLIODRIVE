@@ -71,7 +71,7 @@
                       ';      
                 $dansLePanier = False;
                 for($x = 0; $x < count($_SESSION['panier']); $x++){
-                        if ($_SESSION['panier'][$x] == $_SESSION['TitreLivre']){
+                        if ($_SESSION['panier'][$x][0] == $_SESSION['nolivre']){
                             $dansLePanier = True;
                         }
                             

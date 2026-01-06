@@ -6,7 +6,7 @@
                 if(isset($_SESSION['profil']) && ($_SESSION['profil'] != "")) 
                 {
                     echo '<center> <p> '.$_SESSION['prenomAuteur'].'  '.$_SESSION['txtNom'].'</p>
-                        <p>'.$_SESSION['melAuteur'].'</p>
+                        <p class="centrer-mail">'.$_SESSION['melAuteur'].'</p>
                         <p>'.$_SESSION['adresseAuteur'].'</p>
                         <p>'.$_SESSION['codepostaleAuteur'].' '.$_SESSION['villeAuteur'].'</p> 
                         </center>'; 

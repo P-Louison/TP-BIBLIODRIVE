@@ -36,14 +36,14 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php"><button class="btn btn-primary" type="button">Ajouter un livre</button></a>
                     </li>
-                    <!--
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/supprimerMembre.php">Supprimer un membre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/supprimerMembre.php"><button class="btn btn-primary" type="button">Supprimer un membre</button></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/supLivreADMIN.php">Supprimer un livre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/supLivreADMIN.php"><button class="btn btn-primary" type="button">Supprimer un livre</button></a>
                     </li>
-                    -->
+                    
                     </ul>
                 </div>
             </nav>

@@ -25,12 +25,10 @@ session_start();
             <p>
                 La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
                 Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
-                <br>
-                <br>
-                A FAIRE : corriger la faute d'ortographe sur "accueil"->"accueil"
+                A FAIRE : la presentation de tous les livre sur l'accueil du menu admin
                 
             </p>
-            <br>
+            
 
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div class="container-fluid">
