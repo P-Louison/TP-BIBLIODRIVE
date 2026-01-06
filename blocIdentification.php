@@ -1,6 +1,6 @@
     
     <div class="col-md-2">
-        <div class="row container texteCentrer caseBlocIdentification">
+        <div class="row container-fluid caseBlocIdentification ">
             <?php
 
                 if(isset($_SESSION['profil']) && ($_SESSION['profil'] != "")) 
@@ -20,7 +20,7 @@
                     }
                     else{
                         session_destroy();
-                        header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");   
+                        header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");   
                     }
 
                     
@@ -31,10 +31,12 @@
                         echo '
                         <h4>Connexion </h4>
                         <form action="" method="post">
-                            Identifiant : <input type="text" name="txtNom"><br>
-                            Mot de passe : <input type="password" name="txtMdp"> <br>
-                            <br>
+                            Identifiant : <input type="text" name="txtNom" class="form-control"><br>
+                            Mot de passe : <input type="password" name="txtMdp" class="form-control"> <br>
+                            
                             <input type="submit" class="btn btn-outline-success" name="connecter" value="Connexion" >
+                            <br>
+                            <br>
                         </form>';
                         $_SESSION['profil'] = "";
                         $_SESSION['panier'] = "";
@@ -69,7 +71,7 @@
                                 header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");
                             }
                             else{
-                                header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                                header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");
                             }
 
 
@@ -85,7 +87,7 @@
                                 ';  
                             }
                             else{
-                                header("Location: http://localhost/TP-BIBLIODRIVE/acceuille.php");
+                                header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");
                             }          
                                         
                         } 
@@ -94,12 +96,8 @@
                         
                     }  
                     
-                }
-                
-                
-                
-            ?>
-        
+                }    
+            ?>     
         </div>    
     </div>    
 </div>

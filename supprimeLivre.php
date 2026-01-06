@@ -13,8 +13,5 @@ session_start();
 
     header("Location: http://localhost/TP-BIBLIODRIVE/panierAffichage.php");
 
-    
-    
-    
 ?>
                 

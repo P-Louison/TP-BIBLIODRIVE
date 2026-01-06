@@ -28,13 +28,13 @@ session_start();
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item " >
-                            <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php">accueil</a>
+                            <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/menuAdmin.php"><button class="btn btn-primary" type="button">Accueil</button></a>
                         </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php">Ajouter un membre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/CaseNewMembre.php"><button class="btn btn-primary" type="button">Ajouter un membre</button></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php">Ajouter un livre</a>
+                        <a class="nav-link" href="http://localhost/TP-BIBLIODRIVE/caseAjoutLivre.php"><button class="btn btn-primary" type="button">Ajouter un livre</button></a>
                     </li>
                     <!--
                     <li class="nav-item">
@@ -53,7 +53,7 @@ session_start();
         </div>
 
         <div class="col-md-2 container-fluid">
-             <a href="http://localhost/TP-BIBLIODRIVE/acceuille.php"><img src="./image/chateauMoulinsart.jpg" class="float-end" width="100%"></a>
+             <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"><img src="./image/chateauMoulinsart.jpg" class="float-end" width="100%"></a>
         </div>
     </div>
     

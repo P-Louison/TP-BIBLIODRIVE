@@ -2,7 +2,7 @@
     require 'entete.php';
 ?>
 <div class="row container-fluid"> 
-    <div class="col-md-10 container-fluid">  
+    <div class="col-md-10 container-fluid texteCentrer">  
         <?php
             require_once('connexionbase.php');    
 
@@ -13,14 +13,17 @@
             for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                 $nom = $stmt->fetch();
 
-                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> '.$nom->titre.' </a><BR>';
-            
+                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> <button class="btn btn-primary" type="button">'.$nom->titre.' </button>  </a><BR><BR>';
+                
             }
         ?>
     </div>
     
     <?php
-    require_once 'blocIdentification.php';
+    include 'blocIdentification.php';
     ?>
+<?php
+    include 'piedDePage.html';
+?>
 
     

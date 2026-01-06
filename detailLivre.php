@@ -34,7 +34,7 @@
                         <h5>'.$_SESSION['DetailLivre'].'</h5>
                     </div>
                     <div class="col-md-4 container-fluid"> 
-                        <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto" style="width:80%">
+                        <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto tailleImage">
                     </div>
                   </div>';
 
@@ -108,3 +108,6 @@
     <?php
         require_once 'blocIdentification.php';
     ?>
+<?php
+    include 'piedDePage.html';
+?>

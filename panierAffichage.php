@@ -58,6 +58,9 @@
     
     </div>
     <?php
-    require_once 'blocIdentification.php';
+    include 'blocIdentification.php';
     ?>
+<?php
+    include 'piedDePage.html';
+?>
 

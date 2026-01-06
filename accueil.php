@@ -2,7 +2,7 @@
 
 <?php
     include 'entete.php';
-    ?>
+?>
 
 
 <div class="row container-fluid">
@@ -19,15 +19,15 @@
           $couverture3 = $stmt->fetch();
     
       echo '<div class="carousel-item active">
-          <img src="./image/'.$couverture1->photo.'" class="d-block mx-auto" style="width:20%">
+          <img src="./image/'.$couverture1->photo.'" class="d-block mx-auto taille-Image-Carroussel" >
           <div class="carousel-caption"></div>
         </div>';
         echo '<div class="carousel-item">
-          <img src="./image/'.$couverture2->photo.'" class="d-block mx-auto" style="width:20%">
+          <img src="./image/'.$couverture2->photo.'" class="d-block mx-auto  taille-Image-Carroussel">
           <div class="carousel-caption" ></div> 
         </div>';
         echo '<div class="carousel-item">
-          <img src="./image/'.$couverture3->photo.'" class="d-block mx-auto" style="width:20%">
+          <img src="./image/'.$couverture3->photo.'" class="d-block mx-auto  taille-Image-Carroussel">
           <div class="carousel-caption"></div>  
         </div>
       </div>';
@@ -38,6 +38,9 @@
     include 'blocIdentification.php';
     ?>
   </div>
+<?php
+    include 'piedDePage.html';
+?>
   
     
     

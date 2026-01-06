@@ -13,4 +13,7 @@
             include 'blocIdentification.php';
         ?>
 </div>
+<?php
+    include 'piedDePage.html';
+?>
 

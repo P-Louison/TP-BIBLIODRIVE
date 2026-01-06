@@ -30,5 +30,6 @@
         include_once 'blocIdentification.php';
     ?>
 
-</body>
-</html>
+<?php
+    include 'piedDePage.html';
+?>

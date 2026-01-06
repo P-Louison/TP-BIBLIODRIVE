@@ -23,6 +23,4 @@ session_start();
 
     header("Location: http://localhost/TP-BIBLIODRIVE/panierApresEmprunt.php");
 
-   
-
 ?>

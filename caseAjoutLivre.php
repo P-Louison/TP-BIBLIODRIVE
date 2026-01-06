@@ -17,10 +17,7 @@
                         
                         for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                             $result = $stmt->fetch();
-                            $_SESSION['nomAuteurAjoutLivre'] = $result->nom;
-                            $_SESSION['noauteur'] = $result->noauteur;
-
-                            echo ' <option value="'.$_SESSION['noauteur'].'"> '.$_SESSION['nomAuteurAjoutLivre'].'</option>';
+                            echo ' <option value="'.$result->noauteur.'"> '.$result->nom.'</option>';
                         }
                     ?>
                     
@@ -46,5 +43,6 @@
         include_once 'blocIdentification.php';
     ?>
 
-</body>
-</html>
+<?php
+    include 'piedDePage.html';
+?>
