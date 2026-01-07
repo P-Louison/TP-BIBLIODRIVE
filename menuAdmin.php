@@ -1,8 +1,8 @@
 
     
-    <?php
-        include 'enteteAdmin.php';
-    ?>
+<?php
+    require 'enteteAdmin.php';
+?>
     
     <div class="row container-fluid">
         <div class="col-md-10 texteCentrer">
@@ -24,8 +24,9 @@
                 echo '
             
                 <div class="col-md-3 texteCentrer caseBlocIdentification">
-                    <img src="./image/'.$info->photo.'" class="d-block mx-auto image-Accueil-Admin">
-                    <a href="http://localhost/TP-BIBLIODRIVE/detailLivreAdmin.php?titre='.$info->titre.'"> <button class="btn btn-primary" type="button">'.$info->titre.' </button>  </a>
+                    <img src="./image/'.$info->photo.'" class="taille-Image-Carroussel" >
+                    <br>
+                    <a href="http://localhost/TP-BIBLIODRIVE/detailLivreAdmin.php?titre='.$info->titre.'"> <button class="btn btn-outline-success" type="button">'.$info->titre.' </button>  </a>
                 </div>';
                 }
             ?>
@@ -36,7 +37,7 @@
         <?php
             include 'blocIdentification.php';
         ?>
-</div>
+    </div>
 <?php
     include 'piedDePage.html';
 ?>
