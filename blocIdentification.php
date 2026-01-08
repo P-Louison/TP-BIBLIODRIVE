@@ -20,7 +20,8 @@
                     }
                     else{
                         session_destroy();
-                        header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");   
+                        echo '<script> location.replace("http://localhost/TP-BIBLIODRIVE/accueil.php") </script>';
+                        
                     }
 
                     

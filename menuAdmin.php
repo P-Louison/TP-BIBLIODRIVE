@@ -11,7 +11,7 @@
         
             <div class="row container-fluid">
                 <?php
-
+                
                 require_once('connexionbase.php'); 
                 $stmt = $connexion->prepare("SELECT nom, photo, titre FROM auteur INNER JOIN livre ON auteur.noauteur=livre.noauteur");
                 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -29,8 +29,10 @@
                     <a href="http://localhost/TP-BIBLIODRIVE/detailLivreAdmin.php?titre='.$info->titre.'"> <button class="btn btn-outline-success" type="button">'.$info->titre.' </button>  </a>
                 </div>';
                 }
-            ?>
+                
+                ?>
             </div>
+            
             
         </div>
 
