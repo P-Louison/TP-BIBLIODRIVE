@@ -5,10 +5,10 @@
 
                 if(isset($_SESSION['profil']) && ($_SESSION['profil'] != "")) 
                 {
-                    echo '<center> <p> '.$_SESSION['prenomAuteur'].'  '.$_SESSION['txtNom'].'</p>
-                        <p class="centrer-mail">'.$_SESSION['melAuteur'].'</p>
-                        <p>'.$_SESSION['adresseAuteur'].'</p>
-                        <p>'.$_SESSION['codepostaleAuteur'].' '.$_SESSION['villeAuteur'].'</p> 
+                    echo '<center> <p> '.$_SESSION['prenomUtilisateur'].'  '.$_SESSION['txtNom'].'</p>
+                        <p class="centrer-mail">'.$_SESSION['melUtilisateur'].'</p>
+                        <p>'.$_SESSION['adresseUtilisateur'].'</p>
+                        <p>'.$_SESSION['codepostaleUtilisateur'].' '.$_SESSION['villeUtilisateur'].'</p> 
                         </center>'; 
 
                     if(!isset($_POST['btndeconnexion'])){             
@@ -57,11 +57,11 @@
                         {          
                             $_SESSION['txtNom'] = $info->nom;
                             $_SESSION['txtMdp'] = $info->motdepasse; 
-                            $_SESSION['prenomAuteur'] = $info->prenom;
-                            $_SESSION['melAuteur'] = $info->mel;
-                            $_SESSION['adresseAuteur'] = $info->adresse;
-                            $_SESSION['codepostaleAuteur'] = $info->codepostal;
-                            $_SESSION['villeAuteur'] = $info->ville;
+                            $_SESSION['prenomUtilisateur'] = $info->prenom;
+                            $_SESSION['melUtilisateur'] = $info->mel;
+                            $_SESSION['adresseUtilisateur'] = $info->adresse;
+                            $_SESSION['codepostaleUtilisateur'] = $info->codepostal;
+                            $_SESSION['villeUtilisateur'] = $info->ville;
                             $_SESSION['profil'] = $info->profil;
                             $panier = array();
                             $_SESSION['panier'] = $panier;

@@ -4,7 +4,13 @@
 
 <div class="row container-fluid"> 
     <div class="col-md-10 container-fluid texteCentrer">  
-        <h2> Votre panier </h2>
+        <h2> Votre panier 
+            <?php 
+                if ($_SESSION['profil'] != ""){
+                    echo count($_SESSION['panier']),'/5 ';
+                } 
+            ?>
+        </h2>
         
         <?php
             $panier = array();

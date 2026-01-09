@@ -17,18 +17,13 @@ session_start();
 </head>
 <body>
 
-
-
-
     <div class="row container-fluid">
         <div class="col-md-10">
             <p>
                 La Bibliothèque de Moulinsart est fermée au public jusqu'à nouvel ordre. 
                 Mais il vous est possible de réserver et retirer vos livres via notre service Biblio Drive
-                A FAIRE : correction du BUG de DECONNEXION en admin sur la page d'accueil ET ajout livre !!
-                
             </p>
-            
+            <br>
 
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div class="container-fluid">
@@ -39,12 +34,9 @@ session_start();
                     
                     <div class="collapse navbar-collapse" id="mynavbar">
                         <form class="d-flex container-fluid" action="pageLivre.php" method="get">
-                            <input class="form-control me-2" type="text" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)" name="navBar" >
-                            
+                            <input class="form-control me-2" type="text" placeholder="Rechercher dans le catalogue (saisie du nom de l'auteur)" name="navBar" >                         
                             <button class="btn btn-outline-warning" type="submit">Rechercher</button> 
-                            
-                            <a href="http://localhost/TP-BIBLIODRIVE/panierAffichage.php"> <button class="btn btn-outline-success" type="button">Panier</button> </a>
-                            
+                            <a href="http://localhost/TP-BIBLIODRIVE/panierAffichage.php"> <button class="btn btn-outline-success" type="button">Panier</button> </a>  
                         </form> 
                     </div>
                 </div>
