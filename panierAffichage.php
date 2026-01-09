@@ -27,7 +27,7 @@
                     for($x = 0; $x < count($_SESSION['panier']); $x++) {
                         echo '<div class="row">
                                 <div class="col-md-7">
-                                    <a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$_SESSION['panier'][$x][3].'"> '.$_SESSION['panier'][$x][1].' '.$_SESSION['panier'][$x][2].', '.$_SESSION['panier'][$x][3].' ('.$_SESSION['panier'][$x][4].')</a><br>
+                                    <a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?nolivre='.$_SESSION['panier'][$x][0].'"> '.$_SESSION['panier'][$x][1].' '.$_SESSION['panier'][$x][2].', '.$_SESSION['panier'][$x][3].' ('.$_SESSION['panier'][$x][4].')</a><br>
                                 </div>
                                 <br><br>
                                 <div class="col-md-3">
@@ -52,7 +52,7 @@
                     ';  
                     
                     echo '<div texteCentrer>
-                            <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-success" value="retour accueil" > </a>
+                            <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-warning" value="retour accueil" > </a>
                         </div>
                     
                     ';
