@@ -13,8 +13,8 @@
         <?php
             require_once('connexionbase.php');    
 
-            $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where titre = :titre ");
-            $stmt->bindValue("titre", $_GET['titre']); 
+            $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where nolivre = :num ");
+            $stmt->bindValue("num", $_GET['nolivre']); 
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
             $livre = $stmt->fetch();

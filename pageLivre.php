@@ -14,7 +14,7 @@
             for ($i = 0; $i <= $stmt->rowcount()-1; $i ++) {
                 $nom = $stmt->fetch();
 
-                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$nom->titre.'"> <button class="btn btn-primary" type="button">'.$nom->titre.' </button>  </a><BR><BR>';
+                echo '<a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?nolivre='.$nom->nolivre.'"> <button class="btn btn-primary" type="button">'.$nom->titre.' </button>  </a><BR><BR>';
                 
             }
         ?>

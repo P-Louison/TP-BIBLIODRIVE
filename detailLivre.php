@@ -7,8 +7,8 @@
         <?php
             require_once('connexionbase.php');    
 
-            $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where titre = :titre ");
-            $stmt->bindValue("titre", $_GET['titre']); 
+            $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where nolivre = :num ");
+            $stmt->bindValue("num", $_GET['nolivre']); 
             $stmt->setFetchMode(PDO::FETCH_OBJ);
             $stmt->execute();
             $livre = $stmt->fetch();
@@ -75,7 +75,11 @@
                 if (isset($_POST['btnPanier']) && $dansLePanier == False && (count($_SESSION['panier'])<6)){
 
                     $_SESSION['panier'][] = array($_SESSION['nolivre'] ,$_SESSION['PrenomAuteur'], $_SESSION['NomAuteur'], $_SESSION['TitreLivre'], $_SESSION['anneeparution']);
-                    echo 'Livre ajouté au panier !';
+                    echo 'Livre ajouté au panier !
+                          <a href="http://localhost/TP-BIBLIODRIVE/panierAffichage.php"> <input type="submit" class="btn btn-outline-success" value="retour accueil" > </a>
+
+                    ';
+                    
                     
                 }
                 elseif (isset($_POST['btnPanier']) && $dansLePanier == True) {
