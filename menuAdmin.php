@@ -1,11 +1,14 @@
-
-    
 <?php
     require 'enteteAdmin.php';
 ?>
     
     <div class="row container-fluid">
         <div class="col-md-10 texteCentrer">
+            <?php
+                if ($_SESSION['profil'] !== "admin"){
+                    header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");
+                }
+            ?>
             <h1> Menu Administrateur </h1>
             <h3> liste des livres présents dans la Bibliothèque </h3>
         
@@ -16,7 +19,7 @@
                 $stmt = $connexion->prepare("SELECT nom, photo, titre FROM auteur INNER JOIN livre ON auteur.noauteur=livre.noauteur");
                 $stmt->setFetchMode(PDO::FETCH_OBJ);
                 $stmt->execute();
-                           
+                        
                 for ($i = 0; $i < $stmt->rowcount(); $i++){ 
                 $info = $stmt->fetch();   
                 echo '
@@ -38,5 +41,5 @@
     </div>
 <?php
     include 'piedDePage.html';
-?>
+?>';
 

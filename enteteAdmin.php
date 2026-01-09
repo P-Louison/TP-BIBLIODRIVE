@@ -1,6 +1,12 @@
 <?php
 session_start();
 ?>
+
+<?php
+    if ($_SESSION['profil'] !== "admin"){
+        header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -2,6 +2,12 @@
     include 'enteteAdmin.php'
 ?>
 
+<?php
+    if ($_SESSION['profil'] !== "admin"){
+        header("Location: http://localhost/TP-BIBLIODRIVE/accueil.php");
+    }
+?>
+
 <div class="row container-fluid">
     <div class="col-md-10 texteCentrer">
         
