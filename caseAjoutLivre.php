@@ -19,10 +19,7 @@
                             $result = $stmt->fetch();
                             echo ' <option value="'.$result->noauteur.'"> '.$result->nom.'</option>';
                         }
-                    ?>
-                    
-                    
-                    
+                    ?>                             
                 </select>
             <br><br> 
             Titre : <input type="txt" name="titre">

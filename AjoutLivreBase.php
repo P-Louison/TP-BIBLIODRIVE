@@ -4,7 +4,6 @@
 
     <?php
         require_once('connexionbase.php');
-
         $noauteur = $_POST['auteur'];
         $titre = $_POST['titre'];
         $isbn = $_POST['isbn'];

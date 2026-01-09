@@ -4,7 +4,6 @@
     include 'entete.php';
 ?>
 
-
 <div class="row container-fluid">
   <div class="col-md-10 container-fluid decor ">
     <div id="demo" class="carousel slide arriereplan" data-bs-ride="carousel">

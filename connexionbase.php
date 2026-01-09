@@ -6,7 +6,8 @@ try {
   $motDePasse = ''; // pas de mot de passe sur vos postes
   $connexion = new PDO( $dns, $utilisateur, $motDePasse );
 }
- catch (Exception $e) {
+
+  catch (Exception $e) {
   echo "Connexion à MySQL impossible : ", $e->getMessage();
   die();
 }

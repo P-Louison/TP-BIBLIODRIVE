@@ -10,7 +10,6 @@ session_start();
             array_splice($_SESSION['panier'], count($_SESSION['panier']), count($_SESSION['panier']));
         }
     }
-
     header("Location: http://localhost/TP-BIBLIODRIVE/panierAffichage.php");
 
 ?>

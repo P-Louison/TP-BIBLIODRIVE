@@ -4,7 +4,6 @@
 
     <?php
         require_once('connexionbase.php');
-
         $mel = $_POST['mel'];
         $motdepasse = $_POST['motdepasse'];
         $nom = $_POST['nom'];

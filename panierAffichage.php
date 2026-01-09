@@ -21,7 +21,6 @@
                 }
                 else{
                     for($x = 0; $x < count($_SESSION['panier']); $x++) {
-
                         echo '<div class="row">
                                 <div class="col-md-7">
                                 <a href="http://localhost/TP-BIBLIODRIVE/detailLivre.php?titre='.$_SESSION['panier'][$x][3].'"> '.$_SESSION['panier'][$x][1].' '.$_SESSION['panier'][$x][2].', '.$_SESSION['panier'][$x][3].' ('.$_SESSION['panier'][$x][4].')</a><br>
@@ -41,16 +40,12 @@
                         <br>
                         </div>
                         ';
-
-                    
-                    
+                
                     echo '<div class="col-md-3">
                           <a href="http://localhost/TP-BIBLIODRIVE/viderPanier.php"> <input type="submit" class="btn btn-outline-danger" value="Vider le panier" > </a>      
                           </div>
                     </div>
-                    ';
-                    
-                                     
+                    ';                               
                 }
             }
             else{
@@ -61,7 +56,6 @@
                 echo 'AAAAAAAAA';
             }
         ?>
-    
     </div>
     <?php
     include 'blocIdentification.php';

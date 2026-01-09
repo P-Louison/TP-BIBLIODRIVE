@@ -47,8 +47,6 @@ session_start();
                 </div>
             </nav>
 
-
-
         </div>
 
         <div class="col-md-2 container-fluid">

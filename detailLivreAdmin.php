@@ -20,8 +20,6 @@
             $_SESSION['PhotoLivre'] = $livre->photo;
             $_SESSION['nolivre'] = $livre->nolivre;
             $_SESSION['anneeparution'] = $livre->anneeparution;
-            
-
 
             echo '<div class="row container-fluid"> 
                     <div class="col-md-6 container-fluid"> 

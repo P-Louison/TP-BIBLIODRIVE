@@ -23,7 +23,6 @@
             Profil : <input type="text" name="profil">
             <br>
             <input type="submit" class="btn btn-outline-success" value="Valider" >
-
         </form>
     </div>
     <?php

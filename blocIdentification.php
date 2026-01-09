@@ -65,8 +65,7 @@
                             $_SESSION['profil'] = $info->profil;
                             $panier = array();
                             $_SESSION['panier'] = $panier;
-                            $_SESSION['posLibre'] = 0;
-                            
+                            $_SESSION['posLibre'] = 0;        
 
                             if ($_SESSION['profil'] == "admin"){
                                 header("Location: http://localhost/TP-BIBLIODRIVE/menuAdmin.php");

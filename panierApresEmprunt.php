@@ -5,7 +5,6 @@
 <div class="row container-fluid">
     <div class="col-md-10">
         <?php
-
             unset($_SESSION['panier']);
             $_SESSION['panier'] = array();
             echo '<div class="texteCentrer">

@@ -20,8 +20,6 @@
             $_SESSION['PhotoLivre'] = $livre->photo;
             $_SESSION['nolivre'] = $livre->nolivre;
             $_SESSION['anneeparution'] = $livre->anneeparution;
-            
-
 
             echo '<div class="row container-fluid"> 
                     <div class="col-md-6 container-fluid"> 
@@ -37,10 +35,7 @@
                         <img src="./image/'.$_SESSION['PhotoLivre'].'" class="d-block mx-auto tailleImage">
                     </div>
                   </div>';
-
-            
-            
-            
+      
             $stmt = $connexion->prepare("SELECT * FROM emprunter where emprunter.nolivre = :nolivre order by dateemprunt desc");
             $stmt->bindValue(":nolivre", $_SESSION['nolivre']); 
             $stmt->setFetchMode(PDO::PARAM_INT);

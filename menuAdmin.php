@@ -16,9 +16,7 @@
                 $stmt = $connexion->prepare("SELECT nom, photo, titre FROM auteur INNER JOIN livre ON auteur.noauteur=livre.noauteur");
                 $stmt->setFetchMode(PDO::FETCH_OBJ);
                 $stmt->execute();
-                
-
-                
+                           
                 for ($i = 0; $i < $stmt->rowcount(); $i++){ 
                 $info = $stmt->fetch();   
                 echo '
@@ -31,9 +29,7 @@
                 }
                 
                 ?>
-            </div>
-            
-            
+            </div>    
         </div>
 
         <?php

@@ -1,6 +1,6 @@
 <?php
-        include 'enteteAdmin.php';
-    ?>
+    include 'enteteAdmin.php';
+?>
 
     <div class="row container-fluid">
         <div class="col-md-10 texteCentrer">

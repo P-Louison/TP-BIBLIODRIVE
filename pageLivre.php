@@ -1,6 +1,7 @@
 <?php
     require 'entete.php';
 ?>
+
 <div class="row container-fluid"> 
     <div class="col-md-10 container-fluid texteCentrer">  
         <?php
