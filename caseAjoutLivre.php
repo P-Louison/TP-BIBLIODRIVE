@@ -13,7 +13,7 @@
         
         <form action="AjoutLivreBase.php" method="post">
 
-        Auteur : <select name="auteur">
+        Auteur : <select name="auteur" required>
                     <?php
                         require_once('connexionbase.php');   
 
@@ -28,15 +28,15 @@
                     ?>                             
                 </select>
             <br><br> 
-            Titre : <input type="txt" name="titre">
+            Titre : <input type="txt" name="titre" required>
             <br><br> 
-            ISBN : <input type="txt" name="isbn">
+            ISBN : <input type="txt" name="isbn" required>
             <br><br> 
-            Année de parution : <input type="txt" name="anneeparution">
+            Année de parution : <input type="number" name="anneeparution" required>
             <br><br> 
-            Résumé : <input type="txt" name="detail">
+            Résumé : <input type="txt" name="detail" required>
             <br><br> 
-            Image : <input type="txt" name="imageLivre">
+            Image : <input type="txt" name="imageLivre" required>
             <br><br> 
             <input type="submit" class="btn btn-outline-success" value="Valider" >
         </form>
