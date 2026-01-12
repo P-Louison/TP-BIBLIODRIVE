@@ -5,6 +5,7 @@
 <div class="row container-fluid"> 
     <div class="col-md-10 container-fluid texteCentrer">  
         <?php
+            
             require_once('connexionbase.php');    
 
             $stmt = $connexion->prepare("SELECT * FROM livre INNER JOIN auteur ON livre.noauteur = auteur.noauteur where auteur.nom like :navBar");

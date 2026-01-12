@@ -12,7 +12,7 @@ session_start();
         $stmt = $connexion->prepare("INSERT INTO emprunter (mel, nolivre, dateemprunt, dateretour) 
             VALUES (:melutilisateur, :nolivre, :dateactuel, :dateretour)");
         
-        $stmt->bindValue(":melutilisateur", $_SESSION['melAuteur']);
+        $stmt->bindValue(":melutilisateur", $_SESSION['melUtilisateur']);
         $stmt->bindValue(":nolivre", $_SESSION['panier'][$i][0]);
         $stmt->bindValue(":dateactuel", $dateactuel); 
         $stmt->bindValue(":dateretour", NULL);
