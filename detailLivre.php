@@ -69,7 +69,7 @@
 
                     $_SESSION['panier'][] = array($livre->nolivre ,$livre->prenom, $livre->nom, $livre->titre, $livre->anneeparution);
                     echo 'Livre ajouté au panier !
-                          <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-success" value="retour accueil" > </a>
+                          <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-warning" value="retour accueil" > </a>
 
                     ';
                     

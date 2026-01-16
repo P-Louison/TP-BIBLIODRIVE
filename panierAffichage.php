@@ -20,7 +20,7 @@
                     echo 'Aucun livre dans le panier !
                     <br>
                     <br>
-                    <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-success" value="retour accueil" > </a>
+                    <a href="http://localhost/TP-BIBLIODRIVE/accueil.php"> <input type="submit" class="btn btn-outline-warning" value="retour accueil" > </a>
                     ';
                 }
                 else{
